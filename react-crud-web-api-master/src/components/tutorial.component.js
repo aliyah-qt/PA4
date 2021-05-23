@@ -81,6 +81,7 @@ export default class Tutorial extends Component {
       id: this.state.currentTutorial.id,
       title: this.state.currentTutorial.title,
       description: this.state.currentTutorial.description,
+      price: this.state.currentTutorial.price,
       published: status
     };
 
@@ -209,7 +210,7 @@ export default class Tutorial extends Component {
         ) : (
           <div>
             <br />
-            <p>Please click on a Tutorial...</p>
+            <p>Please click on a Boba Tea...</p>
           </div>
         )}
       </div>
