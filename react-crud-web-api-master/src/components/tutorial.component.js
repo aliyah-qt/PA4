@@ -6,6 +6,7 @@ export default class Tutorial extends Component {
     super(props);
     this.onChangeTitle = this.onChangeTitle.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
+    this.onChangePrice = this.onChangePrice.bind(this);
     this.getTutorial = this.getTutorial.bind(this);
     this.updatePublished = this.updatePublished.bind(this);
     this.updateTutorial = this.updateTutorial.bind(this);
@@ -16,6 +17,7 @@ export default class Tutorial extends Component {
         id: null,
         title: "",
         description: "",
+        price: "",
         published: false
       },
       message: ""
@@ -46,6 +48,17 @@ export default class Tutorial extends Component {
       currentTutorial: {
         ...prevState.currentTutorial,
         description: description
+      }
+    }));
+  }
+
+  onChangePrice(e) {
+    const price = e.target.value;
+    
+    this.setState(prevState => ({
+      currentTutorial: {
+        ...prevState.currentTutorial,
+        price: price
       }
     }));
   }
@@ -140,6 +153,16 @@ export default class Tutorial extends Component {
                   id="description"
                   value={currentTutorial.description}
                   onChange={this.onChangeDescription}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="price">Price</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="price"
+                  value={currentTutorial.price}
+                  onChange={this.onChangePrice}
                 />
               </div>
 

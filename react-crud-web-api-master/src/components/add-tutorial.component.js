@@ -6,6 +6,7 @@ export default class AddTutorial extends Component {
     super(props);
     this.onChangeTitle = this.onChangeTitle.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
+    this.onChangePrice = this.onChangePrice.bind(this);
     this.saveTutorial = this.saveTutorial.bind(this);
     this.newTutorial = this.newTutorial.bind(this);
 
@@ -13,6 +14,7 @@ export default class AddTutorial extends Component {
       id: null,
       title: "",
       description: "", 
+      price: "",
       published: false,
 
       submitted: false
@@ -30,11 +32,17 @@ export default class AddTutorial extends Component {
       description: e.target.value
     });
   }
+  onChangePrice(e) {
+    this.setState({
+      price: e.target.value
+    });
+  }
 
   saveTutorial() {
     var data = {
       title: this.state.title,
-      description: this.state.description
+      description: this.state.description,
+      price: this.state.price
     };
 
     TutorialDataService.create(data)
@@ -43,6 +51,7 @@ export default class AddTutorial extends Component {
           id: response.data.id,
           title: response.data.title,
           description: response.data.description,
+          price: response.data.price,
           published: response.data.published,
 
           submitted: true
@@ -59,6 +68,7 @@ export default class AddTutorial extends Component {
       id: null,
       title: "",
       description: "",
+      price: "",
       published: false,
 
       submitted: false
@@ -100,6 +110,19 @@ export default class AddTutorial extends Component {
                 value={this.state.description}
                 onChange={this.onChangeDescription}
                 name="description"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="price">Price</label>
+              <input
+                type="text"
+                className="form-control"
+                id="price"
+                required
+                value={this.state.price}
+                onChange={this.onChangePrice} //figure out where this is going and create these functions and vars
+                name="price"
               />
             </div>
 

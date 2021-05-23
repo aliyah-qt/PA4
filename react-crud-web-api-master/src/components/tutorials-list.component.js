@@ -158,6 +158,12 @@ export default class TutorialsList extends Component {
               </div>
               <div>
                 <label>
+                  <strong>Price:</strong>
+                </label>{" "}
+                {currentTutorial.price}
+              </div>
+              <div>
+                <label>
                   <strong>Status:</strong>
                 </label>{" "}
                 {currentTutorial.published ? "Published" : "Pending"}
@@ -173,7 +179,7 @@ export default class TutorialsList extends Component {
           ) : (
             <div>
               <br />
-              <p>Please click on a Tutorial...</p>
+              <p>Please click on a Boba Tea...</p>
             </div>
           )}
         </div>
