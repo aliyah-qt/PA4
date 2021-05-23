@@ -15,4 +15,69 @@
   margin: auto;
 }
 
+.b {
+	text-align: center;
+}
+
+.navbar-brand{
+  text-align: center;
+	text-transform: uppercase;
+	font-family: Arial, Helvetica, sans-serif;
+	display: block;
+}
+
+
+.nav1{
+  /* margin-left: 25%; */
+  padding: 0 10px;
+  text-align: center;
+	text-transform: uppercase;
+	font-family: Arial, Helvetica, sans-serif;
+	display: inline;
+}
+ /* top right bot left */
+/* .nav-link2{
+  /margin: 0 30% 0 5%; 
+  text-align: center;
+	text-transform: uppercase;
+	font-family: Arial, Helvetica, sans-serif;
+	display: inline;
+} */
+
+/* .boba-header {
+	text-align: center;
+	text-transform: uppercase;
+	font-family: Arial, Helvetica, sans-serif;
+	display: block;
+}  */
+
+/* .navbar-container {
+	margin-bottom: 2%;
+	margin: 30px 10px 30px;
+	text-align: center;
+}
+
+
+.boba-header {
+  text-align: center;
+  margin-top: 3%;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.navbar{
+  display: inline;
+	 padding: 0 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: black;
+} 
+*/
+
+
+
+
+
 

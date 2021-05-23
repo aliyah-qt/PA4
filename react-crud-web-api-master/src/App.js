@@ -7,25 +7,26 @@ import AddTutorial from "./components/add-tutorial.component";
 import Tutorial from "./components/tutorial.component";
 import TutorialsList from "./components/tutorials-list.component";
 
+{/* <li className="nav-item"></li> */}
 class App extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
-          <Link to={"/tutorials"} className="navbar-brand">
+        <nav className="navbar navbar-light">
+          <Link to={"/tutorials"} className="navbar-brand h1">
             THE UNORIGINAL BOBA STORE
           </Link>
-          <div className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link to={"/tutorials"} className="nav-link">
+          
+          <div className="navbar-nav">
+            
+              <Link to={"/tutorials"} className="nav1">
                 Teas
               </Link>
-            </li>
-            <li className="nav-item">
-              <Link to={"/add"} className="nav-link">
+            
+              <Link to={"/add"} className="nav1">
                 Add a Tea
               </Link>
-            </li>
+            
           </div>
         </nav>
 
