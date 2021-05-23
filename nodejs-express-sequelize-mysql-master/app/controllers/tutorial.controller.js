@@ -28,7 +28,7 @@ exports.create = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Tea."
+          err.message || "Some error occurred while creating the boba tea."
       });
     });
 };
@@ -45,7 +45,7 @@ exports.findAll = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving Teas."
+          err.message || "Some error occurred while retrieving teas."
       });
     });
 };
