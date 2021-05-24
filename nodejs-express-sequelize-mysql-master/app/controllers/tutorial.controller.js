@@ -16,6 +16,7 @@ exports.create = (req, res) => {
   const tutorial = {
     title: req.body.title,
     description: req.body.description,
+    category: req.body.category,
     price: req.body.price,
     published: req.body.published ? req.body.published : false
   };
@@ -24,6 +25,7 @@ exports.create = (req, res) => {
   Tutorial.create(tutorial)
     .then(data => {
       res.send(data);
+      
     })
     .catch(err => {
       res.status(500).send({

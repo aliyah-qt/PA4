@@ -6,6 +6,7 @@ export default class Tutorial extends Component {
     super(props);
     this.onChangeTitle = this.onChangeTitle.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
+    this.onChangeCategory = this.onChangeCategory.bind(this);
     this.onChangePrice = this.onChangePrice.bind(this);
     this.getTutorial = this.getTutorial.bind(this);
     this.updatePublished = this.updatePublished.bind(this);
@@ -17,6 +18,7 @@ export default class Tutorial extends Component {
         id: null,
         title: "",
         description: "",
+        category: "",
         price: "",
         published: false
       },
@@ -52,6 +54,17 @@ export default class Tutorial extends Component {
     }));
   }
 
+  onChangeCategory(e) {
+    const category = e.target.value;
+    
+    this.setState(prevState => ({
+      currentTutorial: {
+        ...prevState.currentTutorial,
+        category: category
+      }
+    }));
+  }
+
   onChangePrice(e) {
     const price = e.target.value;
     
@@ -81,6 +94,7 @@ export default class Tutorial extends Component {
       id: this.state.currentTutorial.id,
       title: this.state.currentTutorial.title,
       description: this.state.currentTutorial.description,
+      category: this.state.currentTutorial.category,
       price: this.state.currentTutorial.price,
       published: status
     };
@@ -146,6 +160,7 @@ export default class Tutorial extends Component {
                   onChange={this.onChangeTitle}
                 />
               </div>
+              
               <div className="form-group">
                 <label htmlFor="description">Description</label>
                 <input
@@ -156,6 +171,18 @@ export default class Tutorial extends Component {
                   onChange={this.onChangeDescription}
                 />
               </div>
+
+              <div className="form-group">
+                <label htmlFor="category">Category</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="category"
+                  value={currentTutorial.category}
+                  onChange={this.onChangeCategory}
+                />
+              </div>
+
               <div className="form-group">
                 <label htmlFor="price">Price</label>
                 <input

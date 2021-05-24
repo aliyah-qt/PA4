@@ -13,12 +13,12 @@ class App extends Component {
     return (
       <div>
         <nav className="navbar navbar-light">
-          <Link to={"/tutorials"} className="navbar-brand h1">
-            THE UNORIGINAL BOBA STORE
+          <Link to={"/tutorials"} className="navbar-brand h1" >
+            UNORIGINAL BOBA STORE <br></br>
           </Link>
           
+          
           <div className="navbar-nav">
-            
               <Link to={"/tutorials"} className="nav1">
                 Teas
               </Link>

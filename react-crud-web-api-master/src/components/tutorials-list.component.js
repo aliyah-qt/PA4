@@ -158,6 +158,12 @@ export default class TutorialsList extends Component {
               </div>
               <div>
                 <label>
+                  <strong>Category:</strong>
+                </label>{" "}
+                {currentTutorial.category}
+              </div>
+              <div>
+                <label>
                   <strong>Price:</strong>
                 </label>{" "}
                 {currentTutorial.price}

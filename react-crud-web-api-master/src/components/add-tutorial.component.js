@@ -6,6 +6,7 @@ export default class AddTutorial extends Component {
     super(props);
     this.onChangeTitle = this.onChangeTitle.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
+    this.onChangeCategory = this.onChangeCategory.bind(this);
     this.onChangePrice = this.onChangePrice.bind(this);
     this.saveTutorial = this.saveTutorial.bind(this);
     this.newTutorial = this.newTutorial.bind(this);
@@ -14,6 +15,7 @@ export default class AddTutorial extends Component {
       id: null,
       title: "",
       description: "", 
+      category: "",
       price: "",
       published: false,
 
@@ -32,6 +34,13 @@ export default class AddTutorial extends Component {
       description: e.target.value
     });
   }
+
+  onChangeCategory(e) {
+    this.setState({
+      category: e.target.value
+    });
+  }
+
   onChangePrice(e) {
     this.setState({
       price: e.target.value
@@ -42,6 +51,7 @@ export default class AddTutorial extends Component {
     var data = {
       title: this.state.title,
       description: this.state.description,
+      category: this.state.category,
       price: this.state.price
     };
 
@@ -51,6 +61,7 @@ export default class AddTutorial extends Component {
           id: response.data.id,
           title: response.data.title,
           description: response.data.description,
+          category: response.data.category,
           price: response.data.price,
           published: response.data.published,
 
@@ -68,6 +79,7 @@ export default class AddTutorial extends Component {
       id: null,
       title: "",
       description: "",
+      category: "",
       price: "",
       published: false,
 
@@ -110,6 +122,19 @@ export default class AddTutorial extends Component {
                 value={this.state.description}
                 onChange={this.onChangeDescription}
                 name="description"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="category">Category</label>
+              <input
+                type="text"
+                className="form-control"
+                id="category"
+                required
+                value={this.state.category}
+                onChange={this.onChangeCategory}
+                name="category"
               />
             </div>
 
