@@ -99,10 +99,11 @@ export default class TutorialsList extends Component {
             <input
               type="text"
               className="form-control"
-              placeholder="Search by title"
+              placeholder="Search by tea"
               value={searchTitle}
               onChange={this.onChangeSearchTitle}
             />
+            
             <div className="input-group-append">
               <button
                 className="btn btn-outline-secondary"
@@ -115,8 +116,7 @@ export default class TutorialsList extends Component {
           </div>
         </div>
         <div className="col-md-6">
-          <h4>Tutorials List</h4>
-
+          <h4>Boba Tea List</h4>
           <ul className="list-group">
             {tutorials &&
               tutorials.map((tutorial, index) => (
@@ -143,7 +143,7 @@ export default class TutorialsList extends Component {
         <div className="col-md-6">
           {currentTutorial ? (
             <div>
-              <h4>Tutorial</h4>
+              <h4>Boba Tea</h4>
               <div>
                 <label>
                   <strong>Title:</strong>
@@ -176,7 +176,7 @@ export default class TutorialsList extends Component {
               </div>
 
               <Link
-                to={"/tutorials/" + currentTutorial.id}
+                to={"/teas/" + currentTutorial.id}
                 className="badge badge-warning"
               >
                 Edit

@@ -134,7 +134,7 @@ export default class Tutorial extends Component {
     TutorialDataService.delete(this.state.currentTutorial.id)
       .then(response => {
         console.log(response.data);
-        this.props.history.push('/tutorials')
+        this.props.history.push('/teas')
       })
       .catch(e => {
         console.log(e);

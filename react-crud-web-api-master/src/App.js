@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import image from '/Users/samhithatarra/Desktop/PA4/react-crud-web-api-master/src/bobalogo.png';
 
 import AddTutorial from "./components/add-tutorial.component";
 import Tutorial from "./components/tutorial.component";
@@ -11,15 +12,18 @@ import TutorialsList from "./components/tutorials-list.component";
 class App extends Component {
   render() {
     return (
+      
       <div>
+            
         <nav className="navbar navbar-light">
-          <Link to={"/tutorials"} className="navbar-brand h1" >
-            UNORIGINAL BOBA STORE <br></br>
+        
+          <Link to={"/teas"} className="navbar-brand h1" >
+          <img src={image} height={150} width={300} />
           </Link>
           
-          
+
           <div className="navbar-nav">
-              <Link to={"/tutorials"} className="nav1">
+              <Link to={"/teas"} className="nav1">
                 Teas
               </Link>
             
@@ -28,13 +32,14 @@ class App extends Component {
               </Link>
             
           </div>
+          
         </nav>
 
         <div className="container mt-3">
           <Switch>
-            <Route exact path={["/", "/tutorials"]} component={TutorialsList} />
+            <Route exact path={["/", "/teas"]} component={TutorialsList} />
             <Route exact path="/add" component={AddTutorial} />
-            <Route path="/tutorials/:id" component={Tutorial} />
+            <Route path="/teas/:id" component={Tutorial} />
           </Switch>
         </div>
       </div>

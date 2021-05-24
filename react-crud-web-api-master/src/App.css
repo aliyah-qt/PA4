@@ -1,3 +1,6 @@
+*{
+	font-family: Arial, Helvetica, sans-serif;
+}
 .list {
   text-align: left;
   max-width: 750px;
@@ -22,10 +25,10 @@
   display: block;
   font-weight: bold;
   display: inline;
-  padding-left: 38%;
+  padding-left: 40%;
   font-size: 2vw;
-  margin-top: 2%;
-  margin-bottom: 4%;
+  margin-top: 0.5%;
+  margin-bottom: 2%;
   
 
 }
@@ -36,7 +39,7 @@
 .navbar-nav{
 	display: inline;
 	position: absolute;
-	top: 100px;
+	padding-top: 160px;
 	left: 650px;
 }
 
@@ -50,6 +53,21 @@
 	font-family: Arial, Helvetica, sans-serif;
 	color: black;
 }
+
+.form-group{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.list{
+	font-family: Arial, Helvetica, sans-serif;
+	margin-right: 50px;
+	padding-top: 40px;
+}
+
+.col-md-6{
+	padding-top: 60px;
+}
+
 
  /* top right bot left */
 /* .nav-link2{
