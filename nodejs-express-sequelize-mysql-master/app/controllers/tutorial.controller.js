@@ -39,9 +39,12 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
   const title = req.query.title;
   var condition = title ? { title: { [Op.like]: `%${title}%` } } : null;
+  
 
   Tutorial.findAll({ where: condition })
+  
     .then(data => {
+      console.log(condition + "************");
       res.send(data);
     })
     .catch(err => {
@@ -52,10 +55,85 @@ exports.findAll = (req, res) => {
     });
 };
 
+// find all Milk teas
+exports.findAllMilk = (req, res) => {
+  console.log("*******HI IN FIND milk*****");
+  Tutorial.findAll({ where: { category: "Milk" } })
+    .then(data => {
+      res.send(data);
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving tea."
+      });
+    })
+    .catch(err => {
+      // res.status(500).send({
+      //   message:
+      //     err.message || "Some error occurred while retrieving tea."
+      // });
+    });
+};
+
+// find all Fruit teas
+exports.findAllFruit = (req, res) => {
+  console.log("*******HI IN FIND fruit*****");
+  Tutorial.findAll({ where: { category: "Fruit" } })
+    .then(data => {
+      res.send(data);
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving tea."
+      });
+    })
+    .catch(err => {
+      // res.status(500).send({
+      //   message:
+      //     err.message || "Some error occurred while retrieving tea."
+      // });
+    });
+};
+
+// find all published Tutorial
+exports.findAllPublished = (req, res) => {
+  console.log("*******HI IN FIND PUBLISHED*****");
+  Tutorial.findAll({ where: { published: true } })
+    .then(data => {
+      res.send(data);
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving tea."
+      });
+    })
+    .catch(err => {
+      // res.status(500).send({
+      //   message:
+      //     err.message || "Some error occurred while retrieving tea."
+      // });
+    });
+};
+
+// find all pending Tutorial
+exports.findAllPending = (req, res) => {
+  console.log("*******HI IN FIND pending*****");
+  Tutorial.findAll({ where: { published: false } })
+    .then(data => {
+      res.send(data);
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving tea."
+      });
+    })
+    .catch(err => {
+      // res.status(500).send({
+      //   message:
+      //     err.message || "Some error occurred while retrieving tea."
+      // });
+    });
+};
+
 // Find a single Tutorial with an id
 exports.findOne = (req, res) => {
   const id = req.params.id;
-
   Tutorial.findByPk(id)
     .then(data => {
       res.send(data);
@@ -134,16 +212,3 @@ exports.deleteAll = (req, res) => {
     });
 };
 
-// find all published Tutorial
-exports.findAllPublished = (req, res) => {
-  Tutorial.findAll({ where: { published: true } })
-    .then(data => {
-      res.send(data);
-    })
-    .catch(err => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving tea."
-      });
-    });
-};

@@ -12,6 +12,15 @@ module.exports = app => {
   // Retrieve all published Tutorials
   router.get("/published", tutorials.findAllPublished);
 
+  // Retrieve all pending Tutorials
+  router.get("/pending", tutorials.findAllPending);
+
+  // Retrieve all Milk Tea
+  router.get("/milk", tutorials.findAllMilk);
+
+  // Retrieve all Fruit Tea
+  router.get("/fruit", tutorials.findAllFruit);
+
   // Retrieve a single Tutorial with id
   router.get("/:id", tutorials.findOne);
 

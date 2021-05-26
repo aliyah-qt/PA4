@@ -28,6 +28,23 @@ class TutorialDataService {
   findByTitle(title) {
     return http.get(`/teas?title=${title}`);
   }
+
+  filterPublished(){
+    return http.get(`/teas/published`);
+  }
+
+  filterPending(){
+    return http.get(`/teas/pending`);
+  }
+
+  filterMilk(){
+    return http.get(`/teas/milk`);
+  }
+
+  filterFruit(){
+    return http.get(`/teas/fruit`);
+  }
+
 }
 
 export default new TutorialDataService();

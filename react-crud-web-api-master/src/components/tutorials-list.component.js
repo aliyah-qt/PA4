@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import TutorialDataService from "../services/tutorial.service";
 import { Link } from "react-router-dom";
 
+
 export default class TutorialsList extends Component {
   constructor(props) {
     super(props);
@@ -11,6 +12,11 @@ export default class TutorialsList extends Component {
     this.setActiveTutorial = this.setActiveTutorial.bind(this);
     this.removeAllTutorials = this.removeAllTutorials.bind(this);
     this.searchTitle = this.searchTitle.bind(this);
+    this.filterPub = this.filterPub.bind(this);
+    this.filterPend = this.filterPend.bind(this);
+    this.filterMil = this.filterMil.bind(this);
+    this.filterFru = this.filterFru.bind(this);
+
 
     this.state = {
       tutorials: [],
@@ -45,6 +51,8 @@ export default class TutorialsList extends Component {
       });
   }
 
+
+
   refreshList() {
     this.retrieveTutorials();
     this.setState({
@@ -71,6 +79,8 @@ export default class TutorialsList extends Component {
       });
   }
 
+ 
+
   searchTitle() {
     this.setState({
       currentTutorial: null,
@@ -88,6 +98,84 @@ export default class TutorialsList extends Component {
         console.log(e);
       });
   }
+
+  filterPub(){
+    this.setState({
+      currentTutorial: null,
+      currentIndex: -1
+    });
+    TutorialDataService.filterPublished()
+      .then(response => {
+        this.setState({
+          tutorials: response.data
+        });
+        console.log(response.data);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+
+
+  }
+
+  filterPend(){
+    this.setState({
+      currentTutorial: null,
+      currentIndex: -1
+    });
+    TutorialDataService.filterPending()
+      .then(response => {
+        this.setState({
+          tutorials: response.data
+        });
+        console.log(response.data);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+
+
+  }
+
+  filterMil(){
+    this.setState({
+      currentTutorial: null,
+      currentIndex: -1
+    });
+    TutorialDataService.filterMilk()
+      .then(response => {
+        this.setState({
+          tutorials: response.data
+        });
+        console.log(response.data);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+
+
+  }
+
+  filterFru(){
+    this.setState({
+      currentTutorial: null,
+      currentIndex: -1
+    });
+    TutorialDataService.filterFruit()
+      .then(response => {
+        this.setState({
+          tutorials: response.data
+        });
+        console.log(response.data);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+
+
+  }
+
+  
 
   render() {
     const { searchTitle, tutorials, currentTutorial, currentIndex } = this.state;
@@ -116,6 +204,34 @@ export default class TutorialsList extends Component {
           </div>
         </div>
         <div className="col-md-6">
+       <button
+                className="btn btn-outline-secondary"
+                type="button"
+                onClick={this.filterPub} //come back
+              >
+                FILTER PUBLISHED
+              </button>
+          <button
+                className="btn btn-outline-secondary"
+                type="button"
+                onClick={this.filterPend}
+              >
+                FILTER PENDING
+          </button>
+          <button
+                className="btn btn-outline-secondary"
+                type="button"
+                onClick={this.filterMil}
+              >
+                FILTER MILK
+          </button>
+          <button
+                className="btn btn-outline-secondary"
+                type="button"
+                onClick={this.filterFru}
+              >
+                FILTER FRUIT
+          </button>
           <h4>Boba Tea List</h4>
           <ul className="list-group">
             {tutorials &&
