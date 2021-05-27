@@ -1,5 +1,6 @@
-# PA4
-IDE: VisualStudio Code
-IDE expansions/plug-ins: Live Share
+# inf124-web-dev
 
-Don't forget to install node.js, express, and react.
+Programming assignment group 7:
+Aliyah F. Clayton,
+Santiago Jr. Morales,
+Samhitha Tarra    

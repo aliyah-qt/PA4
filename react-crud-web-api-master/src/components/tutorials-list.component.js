@@ -202,36 +202,43 @@ export default class TutorialsList extends Component {
               </button>
             </div>
           </div>
-        </div>
-        <div className="col-md-6">
-       <button
-                className="btn btn-outline-secondary"
+          <br></br>
+          <label>
+            Filter by: 
+          </label>
+          <br></br>
+          <button
+                className="filterButton"
                 type="button"
-                onClick={this.filterPub} //come back
+                onClick={this.filterPub} 
               >
-                FILTER PUBLISHED
+                PUBLISHED
               </button>
           <button
-                className="btn btn-outline-secondary"
+                className="filterButton"
                 type="button"
                 onClick={this.filterPend}
               >
-                FILTER PENDING
+                PENDING
           </button>
+
           <button
-                className="btn btn-outline-secondary"
+                className="filterButton"
                 type="button"
                 onClick={this.filterMil}
               >
-                FILTER MILK
+                MILK
           </button>
           <button
-                className="btn btn-outline-secondary"
+                className="filterButton"
                 type="button"
                 onClick={this.filterFru}
               >
-                FILTER FRUIT
+                FRUIT
           </button>
+        </div>
+        <div className="col-md-6">
+       
           <h4>Boba Tea List</h4>
           <ul className="list-group">
             {tutorials &&
